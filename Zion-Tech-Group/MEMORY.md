@@ -15,7 +15,7 @@
 
 ## Ofertas
 
-- Discovery $99 → /discovery/ /book/
+- Free Discovery → /discovery/ /book/
 - Consulting $499 → /booking/
 - Starter $2,500 → /plans/
 - Growth $8,000/mo → /plans/

@@ -1,6 +1,6 @@
 (function(){
   var ITEMS=[
-    {cat:"plano",title:"Discovery $99",desc:"Diagnostico de 1 processo em ate 7 dias.",href:"/discovery/"},
+    {cat:"plano",title:"Free Discovery",desc:"Diagnostico de 1 processo em ate 7 dias.",href:"/discovery/"},
     {cat:"plano",title:"Consulting $499",desc:"Estrategia, roadmap e 3 sessoes de 1h.",href:"/booking/"},
     {cat:"plano",title:"Starter $2.500",desc:"Implementacao de 1 automacao + 30 dias.",href:"/booking/"},
     {cat:"plano",title:"Growth $8.000/mes",desc:"Automacoes continuas, 24/7 e SLA.",href:"/plans/"},
@@ -97,7 +97,7 @@
       }
     }
     if(!host.querySelector("#finops-form")){
-      host.innerHTML='<div class="wrap"><p class="eyebrow">Ferramenta gratuita</p><h2>Estimador FinOps no navegador.</h2><p class="lead">Calcule o desperdicio anual de cloud + horas de revisao. Sem backend, sem fila, sempre no ar.</p><form class="diag" id="finops-form"><label>Gasto mensal de cloud (USD)<input name="spend" type="number" min="0" step="100" value="4000"></label><label>Percentual ocioso / sem dono<select name="idle"><option value="10">10%</option><option value="20" selected>20%</option><option value="35">35%</option><option value="50">50%</option></select></label><label>Horas/mes revisando fatura<input name="hours" type="number" min="0" max="80" value="8"></label><label>Custo da hora (USD)<input name="rate" type="number" min="20" max="400" value="80"></label></form><div class="diag-out" id="finops-out"></div><div class="actions"><a class="btn" href="/finops-consulting/">Ver FinOps consulting</a><a class="btn alt" href="/discovery/">Discovery $99</a></div></div>';
+      host.innerHTML='<div class="wrap"><p class="eyebrow">Ferramenta gratuita</p><h2>Estimador FinOps no navegador.</h2><p class="lead">Calcule o desperdicio anual de cloud + horas de revisao. Sem backend, sem fila, sempre no ar.</p><form class="diag" id="finops-form"><label>Gasto mensal de cloud (USD)<input name="spend" type="number" min="0" step="100" value="4000"></label><label>Percentual ocioso / sem dono<select name="idle"><option value="10">10%</option><option value="20" selected>20%</option><option value="35">35%</option><option value="50">50%</option></select></label><label>Horas/mes revisando fatura<input name="hours" type="number" min="0" max="80" value="8"></label><label>Custo da hora (USD)<input name="rate" type="number" min="20" max="400" value="80"></label></form><div class="diag-out" id="finops-out"></div><div class="actions"><a class="btn" href="/finops-consulting/">Ver FinOps consulting</a><a class="btn alt" href="/discovery/">Free Discovery</a></div></div>';
     }
   }
 
@@ -110,7 +110,7 @@
     var waste=Math.round(spend*idle*12 + hours*rate*12);
     var plan, href, why;
     if(waste>=80000){ plan="Consulting \u00b7 $499"; href="/booking/"; why="O vazamento paga o roadmap neste trimestre."; }
-    else if(waste>=15000){ plan="Discovery \u00b7 $99"; href="/discovery/"; why="Um recorte de 7 dias mostra onde cortar primeiro."; }
+    else if(waste>=15000){ plan="Discovery \u00b7 grátis"; href="/discovery/"; why="Um recorte de 7 dias mostra onde cortar primeiro."; }
     else { plan="Ferramentas gratis + sessao"; href="/free-ai-it-tools/"; why="Comece medindo. Se o numero crescer, subimos para Discovery."; }
     fo.innerHTML="<div class=\"score\">US$ "+waste.toLocaleString("en-US")+"/ano</div><p>Desperdicio estimado (idle cloud + horas de revisao).</p><p>Recomendacao: <strong>"+plan+"</strong>. "+why+"</p><p><a class=\"btn\" href=\""+href+"\">Seguir recomendacao</a> <a class=\"btn alt\" href=\"/finops-consulting/\">Ver FinOps</a></p>";
   }
