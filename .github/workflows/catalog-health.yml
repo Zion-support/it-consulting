@@ -19,13 +19,18 @@ jobs:
         run: |
           set -euo pipefail
           # NOTE (2026-10-05): Discovery is now FREE sitewide ("Discovery $99" removed).
-          # Updated expectations verified against live homepage + catalog JS 2026-10-05.
+          # NOTE (2026-10-06): retired 'Consulting $499' literal -> durable "Consulting".
+          # Updated expectations verified against live homepage + catalog JS 2026-10-06.
           html="$(for i in 1 2 3 4 5; do curl -fsSL -m 20 https://ziontechgroup.com/ || true; sleep 2; done)"
           must=(
             "Discovery"
             "Discovery grátis"
             "Agentes"
+            "Autonomous AI Agents"
+            "Plans"
+            "Managed IT"
             "FinOps"
+            "Ver case studies"
             "Consulting"
           )
           fail=0
