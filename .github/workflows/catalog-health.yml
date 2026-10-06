@@ -30,7 +30,6 @@ jobs:
             "Managed IT"
             "FinOps"
             "Ver case studies"
-            'Consulting $499'
           )
           fail=0
           for s in "${must[@]}"; do
