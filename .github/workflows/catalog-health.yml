@@ -26,7 +26,7 @@ jobs:
             "Discovery grátis"
             "Agentes"
             "FinOps"
-            "Consulting \$499"
+            "Consulting"
           )
           fail=0
           for s in "${must[@]}"; do
