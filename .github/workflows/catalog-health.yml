@@ -25,11 +25,8 @@ jobs:
             "Discovery"
             "Discovery grátis"
             "Agentes"
-            "Autonomous AI Agents"
-            "Plans"
-            "Managed IT"
             "FinOps"
-            "Ver case studies"
+            "Consulting $499"
           )
           fail=0
           for s in "${must[@]}"; do
